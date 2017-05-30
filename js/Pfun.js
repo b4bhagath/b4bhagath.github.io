@@ -7,14 +7,14 @@ var app = angular.module("occupied", ["firebase"]);
 app.controller('light', ['$scope', '$firebase',
   function($scope, $firebase) {
     //CREATE A FIREBASE REFERENCE
-    var baseRef = new Firebase(FbURL + "/occupied");
+    var baseRef = new Firebase(FbURL + "/Pantryoccupied");
     var sync = $firebase(baseRef);
 	  // download the data into a local object
 	  var syncObject = sync.$asObject();
 
 // synchronize the object with a three-way data binding
 // click on `index.html` above to see it used in the DOM!
-    syncObject.$bindTo($scope, "occupied");
+    syncObject.$bindTo($scope, "Pantryoccupied");
   }
 ]);
 
